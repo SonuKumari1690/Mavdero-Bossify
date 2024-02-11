@@ -34,7 +34,7 @@ const Chatbox = ({
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ text: input }),
+          body: JSON.stringify({ messages: [...chatArray, userMessage] }),
         });
         if (!response.ok) {
           throw new Error("Network response was not ok");

@@ -19,7 +19,11 @@ const App = () => {
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
-      setChatHistory(data);
+      
+      // Assuming the response is an array of chat objects with a 'messages' property
+      const formattedChatHistory = data.map(chat => chat.messages);
+  
+      setChatHistory(formattedChatHistory);
     } catch (error) {
       console.error("Error fetching chat history:", error);
     }

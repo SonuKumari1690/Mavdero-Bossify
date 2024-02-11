@@ -1,0 +1,107 @@
+.chatbox-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 80%;
+}
+
+.chatbox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align text to the left */
+  padding: 12px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  height: -webkit-fill-available;
+  width: 90%;
+}
+
+.message {
+  max-width: 70%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: none;
+  color: #000000;
+  text-align: left;
+  font-family: Söhne, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Helvetica Neue", Arial,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Apply bold style to text containing "User" */
+.message.user::before {
+  content: "User: ";
+  font-weight: bold;
+}
+
+/* Apply bold style to text containing "Mira" */
+.message.bot::before {
+  content: "Mira: ";
+  font-weight: bold;
+}
+
+.input-container {
+  display: flex;
+  width: 80%;
+  padding: 15px;
+  position: relative;
+}
+
+.input-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+textarea {
+  width: calc(100% - 30px); /* Adjust the width to leave space for the button */
+  padding: 8px;
+  /* border: none; */
+  border-radius: 10px; /* Adjust the border radius for the entire input */
+  font-size: 14px;
+  outline: none;
+  resize: none;
+}
+
+.send-button-container {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+}
+
+.send-button {
+  font-size: 20px;
+  color: #fff;
+  background-color: #004e16; /* Blue background color for the button */
+  border: none;
+  border-radius: 10px; /* Adjust the border radius for the button */
+  padding: 6px 11px 4px 11px;
+  margin: 5px 2px 6px 2px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: #2980b9; /* Hover color for the button */
+}
+
+.bottom-logo-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.bottom-logo {
+  max-width: 27%;
+  height: auto;
+  margin-right: 10px;
+}
+
+.poweredBy {
+  font-size: 13px;
+}
